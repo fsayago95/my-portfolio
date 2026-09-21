@@ -1,0 +1,27 @@
+<p-carousel
+    [value]="slides"
+    [circular]="true"
+    [numVisible]="1"
+    [numScroll]="1"
+    [showNavigators]="true"
+    [showIndicators]="true"
+    [responsiveOptions]="responsiveOptions"
+>
+    <ng-template let-slide #item>
+        <article class="experience-card" [attr.aria-label]="slide.title + ' experience summary'">
+            <div class="experience-content">
+                <div class="experience-meta">
+                    <span class="company-name">{{ slide.title }}</span>
+                    <span class="period">{{ slide.period }}</span>
+                </div>
+                <h3>{{ slide.role }}</h3>
+                <p>{{ slide.summary }}</p>
+                <ul class="stack-list" aria-label="Skills used">
+                    <li *ngFor="let item of slide.stack">{{ item }}</li>
+                </ul>
+            </div>
+        </article>
+    </ng-template>
+</p-carousel>
+
+

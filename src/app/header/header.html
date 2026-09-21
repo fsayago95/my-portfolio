@@ -1,0 +1,24 @@
+<header class="topnav" [class.compact]="isCompact" [class.open]="isCompact && isMenuActive">
+    <a class="brand" href="#home">Franco Sayago</a>
+
+    <nav class="links" [class.open]="isCompact && isMenuActive" aria-label="Main navigation">
+        <a href="#home" (click)="closeMenu()">Home</a>
+        <a href="#projects" (click)="closeMenu()">Projects</a>
+        <a href="#contact" (click)="closeMenu()">Contact</a>
+    </nav>
+
+    <button
+        class="menu-icon"
+        id="menuIcon"
+        type="button"
+        aria-label="Toggle menu"
+        [class.active]="isMenuActive"
+        [class.visible]="isCompact"
+        [attr.aria-expanded]="isCompact && isMenuActive"
+        (click)="toggleMenu()"
+    >
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
+</header>
